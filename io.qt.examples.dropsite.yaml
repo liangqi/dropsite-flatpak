@@ -1,0 +1,18 @@
+app-id: io.qt.examples.dropsite
+runtime: org.kde.Platform
+runtime-version: 'dev'
+sdk: org.kde.Sdk
+command: dropsite
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --socket=wayland
+  - --filesystem=host
+  - --device=dri
+modules:
+  - name: dropsite
+    buildsystem: cmake-ninja
+    sources:
+      - type: archive
+        url: https://github.com/liangqi/dropsite/archive/aca0db479eca3a459c6c936dba60d30729735638.zip
+        sha256: 6dd7ef8a31353d65fd5b80cdead7167f61c5d0e5c3d7bd9cb50233d646ca816c
